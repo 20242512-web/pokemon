@@ -3,6 +3,8 @@ import { Router } from 'express';
 import * as admins from '../controllers/admin_controllers.js';
 import * as carrers from '../controllers/carrer_controllers.js';
 import * as nationApis from '../apis/nations_apis.js';
+import * as pokemones from '../controllers/pokemon_controllers.js';
+
 import { redirectIfAuthenticated, requireAuth } from '../../configs/middlewares.js'; 
 
 const router = Router();
@@ -22,5 +24,7 @@ router.put('/api/v1/nations/:id', nationApis.updateNation);
 router.delete('/api/v1/nations/:id', nationApis.deleteNation);
 // carrers
 router.get('/admin/carrers', carrers.home);
+// pokemon
+router.get('/admin/pokemones', pokemones.home);
 
 export default router;
